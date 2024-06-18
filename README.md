@@ -10,7 +10,7 @@ BarkBOT's architecture is built using Python and Flask, with MongoDB for databas
 An overview of the repository structure.
 
 ```plaintext
-bark-bot-telegram-api/
+barkbot-api/
 ├── app/
 │   ├── __init__.py
 │   ├── config.py
@@ -38,6 +38,19 @@ bark-bot-telegram-api/
 │       ├── trading_service.py
 │       ├── analytics_service.py
 │       ├── feedback_service.py
+│   └── telegram/
+│       ├── __init__.py
+│       ├── bot.py
+│       ├── handlers/
+│           ├── __init__.py
+│           ├── start.py
+│           ├── help.py
+│           ├── register.py
+│           ├── authenticate.py
+│           ├── trade.py
+│           ├── price_alert.py
+│           ├── analytics.py
+│           ├── feedback.py
 ├── tests/
 │   ├── __init__.py
 │   ├── test_users.py
