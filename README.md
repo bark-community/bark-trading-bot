@@ -1,6 +1,8 @@
 # BarkBOT
 BarkBOT is an advanced trading assistant designed to streamline and secure the trading of BARK tokens on the Solana blockchain. Leveraging the popular Telegram messaging platform, BarkBOToffers users a seamless and intuitive interface for executing trades, monitoring performance, and receiving real-time notifications and analytics. Key features include automatic token buying, detailed profit and loss (PNL) tracking, sophisticated trading analytics, referral systems, and price alerts.
+
 With BarkBOT, users can instantly send purchase transactions by simply pasting a token address into Telegram. This eliminates the need to connect wallets, adjust slippage, or manually confirm transactions. Powered by Jupiter for routing, BarkBOT provides the fastest and most efficient way to buy, sell, and manage trades, ensuring users remain in control of their trading activities.
+
 BarkBOT's architecture is built using Python and Flask, with MongoDB for database management. Security is a paramount consideration, with robust measures such as JWT-based authentication, two-factor authentication (2FA), and rate limiting to protect user accounts and data. This document outlines BarkBOT's architecture, key features, and implementation details, providing a comprehensive overview of its components and functionality. By integrating advanced security practices and a modular design, BarkBOT ensures a secure, efficient, and scalable solution for trading BARK tokens on the Solana blockchain.
 
 ### Repository Structure
