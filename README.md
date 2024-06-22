@@ -1,161 +1,117 @@
 # BarkBOT
-BarkBOT is an advanced trading assistant designed to streamline and secure the trading of BARK tokens on the Solana blockchain. Leveraging the popular Telegram messaging platform, BarkBOToffers users a seamless and intuitive interface for executing trades, monitoring performance, and receiving real-time notifications and analytics. Key features include automatic token buying, detailed profit and loss (PNL) tracking, sophisticated trading analytics, referral systems, and price alerts.
 
-With BarkBOT, users can instantly send purchase transactions by simply pasting a token address into Telegram. This eliminates the need to connect wallets, adjust slippage, or manually confirm transactions. Powered by Jupiter for routing, BarkBOT provides the fastest and most efficient way to buy, sell, and manage trades, ensuring users remain in control of their trading activities.
+BarkBOT is a Telegram trading bot designed to facilitate seamless and secure trading of BARK tokens on the Solana blockchain. With its user-friendly interface, advanced trading features, and robust security measures, BarkBOT offers a comprehensive trading experience for both novice and experienced traders.
 
-BarkBOT's architecture is built using Python and Flask, with MongoDB for database management. Security is a paramount consideration, with robust measures such as JWT-based authentication, two-factor authentication (2FA), and rate limiting to protect user accounts and data. This document outlines BarkBOT's architecture, key features, and implementation details, providing a comprehensive overview of its components and functionality. By integrating advanced security practices and a modular design, BarkBOT ensures a secure, efficient, and scalable solution for trading BARK tokens on the Solana blockchain.
+## Key Features:
 
-### Repository Structure
+1. **Automatic Buying**: Easily purchase BARK tokens by pasting the token address.
+2. **Referral Rewards**: Generate referral links and earn rewards from referred users.
+3. **PNL Tracking**: Monitor your profit and loss with detailed analytics.
+4. **Enhanced Security**: Secure your account with two-factor authentication (2FA).
+5. **Transaction Fees Utilization**: Use transaction fees for BARK token buyback, charity, donations, and governance voting.
+6. **Solana Wallet Management**: Generate new wallets, check balances, transfer SOL and BARK tokens, and export private keys.
+7. **Price Alerts**: Set and receive price alerts for BARK tokens.
+8. **User Profile Management**: View and update your user profile.
+9. **Custom Notifications**: Set notifications for various events.
+10. **Advanced Settings**: Customize RPC, slippage, and transaction priority.
+11. **Interactive User Interface**: Intuitive navigation with inline keyboards.
+12. **Detailed Token Information**: View token details before purchasing.
+13. **Market Data**: Access real-time market data and trends.
+14. **Transaction History Pagination**: View transaction history with pagination.
+15. **User Authentication**: Secure user authentication and verification.
+16. **Custom Commands**: Easily manage commands with a custom command system.
+17. **Secure Data Storage**: Encrypt and securely store sensitive user data.
+18. **Comprehensive Help Command**: Interactive help with buttons for different topics.
 
-An overview of the repository structure.
+## Installation Instructions
 
-```plaintext
-barkbot-api/
-├── app/
-│   ├── __init__.py
-│   ├── config.py
-│   ├── models/
-│   │   ├── __init__.py
-│   │   ├── user.py
-│   │   ├── transaction.py
-│   │   ├── feedback.py
-│   │   ├── price_alert.py
-│   └── routes/
-│       ├── __init__.py
-│       ├── users.py
-│       ├── trading.py
-│       ├── analytics.py
-│       ├── feedback.py
-│   ├── utils/
-│   │   ├── __init__.py
-│   │   ├── auth.py
-│   │   ├── rate_limit.py
-│   │   ├── validation.py
-│   │   ├── logging.py
-│   └── services/
-│       ├── __init__.py
-│       ├── user_service.py
-│       ├── trading_service.py
-│       ├── analytics_service.py
-│       ├── feedback_service.py
-│   └── telegram/
-│       ├── __init__.py
-│       ├── bot.py
-│       ├── handlers/
-│           ├── __init__.py
-│           ├── start.py
-│           ├── help.py
-│           ├── register.py
-│           ├── authenticate.py
-│           ├── trade.py
-│           ├── price_alert.py
-│           ├── analytics.py
-│           ├── feedback.py
-├── tests/
-│   ├── __init__.py
-│   ├── test_users.py
-│   ├── test_trading.py
-│   ├── test_analytics.py
-│   ├── test_feedback.py
-├── migrations/
-│   ├── __init__.py
-│   └── migration_script.py
-├── requirements.txt
-├── Dockerfile
-├── docker-compose.yml
-├── .env
-├── README.md
-├── run.py
-```
+### Prerequisites
 
-### Key Files and Directories
+- Python 3.12.4 or higher
+- pip (Python package installer)
+- A Telegram account
 
-1. **app/**: Contains the main application code.
-   - **config.py**: Configuration settings for the application.
-   - **models/**: Database models.
-   - **routes/**: API route definitions.
-   - **services/**: Business logic and services.
-   - **utils/**: Utility functions for authentication, validation, and logging.
+### Step-by-Step Installation
 
-2. **tests/**: Unit tests for various components of the application.
+1. **Clone the Repository**
 
-3. **migrations/**: Scripts for database migrations.
+   ```sh
+   git clone https://github.com/bark-community/bark-trading-bot.git
+   cd bark-trading-bot
+   ```
 
-4. **requirements.txt**: List of dependencies required for the project.
+2. **Create and Activate a Virtual Environment**
 
-5. **Dockerfile**: Instructions to build a Docker image for the application.
+   ```sh
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
 
-6. **docker-compose.yml**: Configuration for Docker Compose to set up the development and production environments.
+3. **Install Dependencies**
 
-7. **.env**: Environment variables for the application.
+   ```sh
+   pip install -r requirements.txt
+   ```
 
-8. **README.md**: Project documentation and setup instructions.
+4. **Set Up Environment Variables**
 
-9. **run.py**: Entry point to run the Flask application.
+   Create a `.env` file in the project root directory and add your environment variables:
 
-### Cloning the Repository
+   ```env
+   TELEGRAM_TOKEN=telegram_token
+   ENCRYPTION_KEY=encryption_key
+   TRADING_API_KEY=trading_api_key
+   SOLANA_API_KEY=solana_api_key
+   ```
 
-To get started with BARKbot, you can clone the repository using the following command:
+5. **Run the BarkBOT**
 
-```sh
-git clone https://github.com/bark-community/bark-bot-telegram-api.git
-```
+   ```sh
+   python bot.py
+   ```
 
-### Setting Up the Environment
+## Usage
 
-1. **Navigate to the project directory:**
+### Starting the Bot
 
-```sh
-cd bark-bot-telegram-api
-```
+Send `/start` to the bot in Telegram to begin. This will generate a new Solana wallet for you if you don't already have one.
 
-2. **Create a virtual environment and activate it:**
+### Verifying Your Account
 
-```sh
-python -m venv venv
-source venv/bin/activate   # On Windows use `venv\Scripts\activate`
-```
+To ensure security, verify your account by sending `/verify`. You will be prompted to provide your email for verification.
 
-3. **Install the required dependencies:**
+### Buying Tokens
 
-```sh
-pip install -r requirements.txt
-```
+Send `💰 Buy` and paste the token address to purchase BARK tokens. Confirm the token information before proceeding with the purchase.
 
-4. **Set up environment variables:**
+### Refreshing Balance
 
-Create a `.env` file in the project root and add the necessary environment variables as described in the [`.env`](#env) section.
+Send `🔄 Refresh` to update and view your current SOL and BARK balances.
 
-5. **Run the application:**
+### Wallet Management
 
-```sh
-flask run
-```
+Send `🏦 Wallet` to access options for withdrawing SOL or BARK tokens, or exporting your private key.
 
-### Running with Docker
+### Settings
 
-To run the application using Docker, follow these steps:
+Send `⚙️ Settings` to customize your RPC, slippage, and transaction priority.
 
-1. **Build the Docker containers:**
+### Dashboard
 
-```sh
-docker-compose build
-```
+Send `📊 Dashboard` to view an overview of your trading performance, including PNL, total volume, win/loss ratio, and recent transactions.
 
-2. **Start the Docker containers:**
+### Market Data
 
-```sh
-docker-compose up
-```
+Send `📈 Market Data` to access the latest market data, including price, volume, market cap, and 24-hour change.
 
-3. **Access BARKbot:**
+### Help
 
-The Flask application will be available at `http://localhost:5000`.
+Send `/help` to get assistance with trading commands, account management, security features, and market data.
 
-### Contributing
+## Contributing
 
-If you wish to contribute to BARKbot, please follow the contribution guidelines outlined in the [CONTRIBUTING.md](https://github.com/bark-community/bark-bot-telegram-api/blob/main/CONTRIBUTING.md) file in the repository.
+Contributions are welcome! Please fork the repository and create a pull request with your changes. Ensure that your code adheres to the existing style and passes all tests.
 
-### License
+## License
 
-The BARKbot source code is released under the MIT License. For more details, please refer to the [LICENSE](https://github.com/bark-community/bark-bot-telegram-api/blob/main/LICENSE) file in the repository.
+The MIT License. See the [LICENSE](LICENSE) file for more details.
