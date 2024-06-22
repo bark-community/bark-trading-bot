@@ -60,7 +60,7 @@ BarkBOT is a Telegram trading bot designed to facilitate seamless and secure tra
    ```env
    TELEGRAM_TOKEN=telegram_token
    ENCRYPTION_KEY=encryption_key
-   TRADING_API_KEY=trading_api_key
+   jupiter_swap_api_KEY=jupiter_swap_api_key
    SOLANA_API_KEY=solana_api_key
    ```
 

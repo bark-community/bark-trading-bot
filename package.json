@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "run the BarkBOT": "python bot.py",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "python -m unittest discover -s tests"
   },
   "keywords": [],
   "author": "BARK Protocol",

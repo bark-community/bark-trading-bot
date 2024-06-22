@@ -1,0 +1,13 @@
+# Replace with the actual version of your custom library
+telebot==0.0.5
+python-dotenv==1.0.1
+cryptography==42.0.8
+pysolana==0.2.2
+base58==2.2.1
+ratelimit==2.2.1
+jupiter-swap-api==0.1.0
+jupiter-python-sdk==0.0.2.0
+django-referral==1.0.1
+crypto-pnl-tracker==0.5.2
+price-alerts==0.1.0
+solana-api==0.34.2
