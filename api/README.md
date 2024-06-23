@@ -239,6 +239,13 @@ You can use tools like Postman or cURL to test the API endpoints. Remember to ge
     curl -X POST http://127.0.0.1:5000/buy_token -H "Content-Type: application/json" -H "Authorization: Bearer <JWT_TOKEN>" -d '{"telegram_id": 123456, "token_address": "TOKEN_ADDRESS"}'
     ```
 
+## Instructions for Use
+
+- Set up your environment by cloning the repository and installing the required packages.
+- Configure your environment variables in the .env file.
+- Run the Flask application using python app.py.
+- Test the API using Postman or cURL with the provided endpoints and example commands.
+
 ## Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request for any improvements or bug fixes.
