@@ -67,6 +67,15 @@ BarkBOT is a Telegram bot that allows users to manage their Solana wallets, trad
 
     The API will be available at `http://127.0.0.1:5000/`.
 
+
+6. **Or Run Docker Compose:**
+
+- In the terminal, navigate to the root directory of your project.
+  Run the following command to start the services:
+
+```sh
+docker-compose -f barkbot.yaml up
+```
 ## API Endpoints
 
 ### User Management

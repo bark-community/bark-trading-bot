@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  web:
+    image: python:3.9
+    container_name: barkbot-web
+    command: bash -c "pip install -r requirements.txt && python app.py"
+    environment:
+      - TELEGRAM_TOKEN=${TELEGRAM_TOKEN}
+      - ENCRYPTION_KEY=${ENCRYPTION_KEY}
+      - JUPITER_API_KEY=${JUPITER_API_KEY}
+      - SOLANA_API_KEY=${SOLANA_API_KEY}
+      - DATABASE_URL=postgresql://barkbotuser:barkbotpassword@db:5432/barkbot
+      - JWT_SECRET_KEY=${JWT_SECRET_KEY}
+      - PRIVATE_KEY=${PRIVATE_KEY}
+      - SOLANA_RPC_ENDPOINT_URL=${SOLANA_RPC_ENDPOINT_URL}
+    volumes:
+      - .:/app
+    working_dir: /app
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13
+    container_name: barkbot-db
+    environment:
+      POSTGRES_USER: barkbotuser
+      POSTGRES_PASSWORD: barkbotpassword
+      POSTGRES_DB: barkbot
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
