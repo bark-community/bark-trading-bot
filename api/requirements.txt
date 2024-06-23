@@ -3,7 +3,7 @@ Flask-Limiter==3.7.0
 Flask-JWT-Extended==4.6.0
 Flask-Bcrypt==1.0.1
 psycopg2-binary==2.9.9
-SQLAlchemy==1.4.22
+SQLAlchemy==2.0.31
 marshmallow==3.21.3
 jupiter-python-sdk==0.0.2.0
 telebot==0.0.5
