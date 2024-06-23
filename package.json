@@ -9,10 +9,11 @@
   "keywords": [],
   "author": "BARK Protocol",
   "license": "Apache-2.0",
-  "description": "BarkBOT is a Telegram trading bot designed to facilitate seamless and secure trading of BARK tokens on the Solana blockchain.",
+  "description": "BarkBOT is a Telegram trading bot designed to facilitate seamless and secure trading of BARK tokens (BARK) and SOL on the Solana blockchain.",
   "dependencies": {
     "@solana/web3.js": "^1.93.1",
     "base58": "^2.0.1",
+    "cross-fetch": "^4.0.0",
     "dotenv": "^16.4.5",
     "logging": "^3.3.0",
     "telebot": "^1.4.1"
