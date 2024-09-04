@@ -1,7 +1,7 @@
 # Replace with the actual version of your custom library
 telebot==0.0.5
 python-dotenv==1.0.1
-cryptography==42.0.8
+cryptography==43.0.1
 pysolana==0.2.2
 base58==2.2.1
 ratelimit==2.2.1
